@@ -1,0 +1,9 @@
+import socket
+
+sock_=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+
+sock_.connect((socket.gethostname(),4444))
+msg=sock_.recv(1024)    #no of bytes we want to recieve
+
+sock_.close()
+print(msg.decode("ascii"))
